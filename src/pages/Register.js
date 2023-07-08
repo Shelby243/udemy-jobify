@@ -13,8 +13,8 @@ const initialeState = {
 
 const Register = () => {
   const [values, setValues] = useState(initialeState);
-  const state = useAppContext();
-  console.log(state);
+  const { isLoading, showAlert } = useAppContext();
+  //console
   //global state and use Navigate
 
   const toggleMember = () => {
@@ -32,7 +32,7 @@ const Register = () => {
       <form className="form" onSubmit={onSubmit}>
         <Logo />
         <h3>{values.isMember ? "Login" : "Register"} </h3>
-        {values.showAlert && <Alert />}
+        {showAlert && <Alert />}
         {/** name input */}
         {!values.isMember && (
           <FormRow
